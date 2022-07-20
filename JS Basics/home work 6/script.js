@@ -14,82 +14,68 @@ console.log(fibonache(5));
 
 // #2
 
-// function sumOfProgression(count, denominator) {
-//     let sum = 0;
-//     let multiplier = 1;
+function sumOfProgression(count, denominator) {
+    let sum = 0;
+    let multiplier = 1;
     
-//     for(let i = 0; i < count; i++) {
-//         sum += multiplier;
-//         multiplier *= denominator;
-//     }
-//         return sum;
-//  }
-//   console.log(sumOfProgression(5, 2));
-
-const geoProgSum = function (a, b) {
-    let c;
-    while (a <= i) {
-        let i = 1;
-        i++;
-        c = i * b;
-
-        console.log(c);
+    for (let i = 0; i < count; i++) {
+        sum += multiplier;
+        multiplier *= denominator;
     }
-
-    // for (let i = 1; i <= a; i++) {
-    //     let c = i * b;
-    // }
-    // console.log(c);
-    // return c;
-}
-console.log(geoProgSum (5, 2));
-
+        return sum;
+ }
+  console.log(sumOfProgression(5, 2));
 
 const arrowGeoProgSum = (a, b) => {
     const b1 = 1;
     let sum = b1 *(( 1 - b**a ) / ( 1 - b));
     return sum;
 }
-console.log(arrowGeoProgSum (8, 3));
+console.log(arrowGeoProgSum (5, 2));
 
 // #3
 
-let c = prompt('Input first num', '');
-let d = prompt('Input second num', '');
+// let c = prompt('Input first num', '');
+// let d = prompt('Input second num', '');
 
-const isCommon = (num) => {
+// const isCommon = (num) => {
 
-    for(let i = 2; i < num; i++) {
+//     for(let i = 2; i < num; i++) {
 
-        if (number % i === 0) {
-            return false;
-        }
-    }
-    return true;
-}
-
-const showCommonRange = (c, d) => {
-
-    for (let i = c; i <= d; i++) {
-
-        const isNumberCommon = isCommon(i);
-         
-        console.log (isNumberCommon);
-
-        // if (isNumberCommon) {
-        //     console.log(i + " common");
-        // }
-    }
-}
-
-// for(let i = c; i <= d; i++) {
-//     let isCommon = true;
-//     for(let j = 2; j < i; j++) {
-//         if (i % j === 0) {
-//             isCommon = false;
+//         if (number % i === 0) {
+//             return false;
 //         }
 //     }
-//     if(isCommon) {
-//         console.log(i);
+//     return true;
+// }
+
+// const showCommonRange = (c, d) => {
+
+//     for (let i = c; i <= d; i++) {
+
+//         const isNumberCommon = isCommon(i);
+         
+//         if (isNumberCommon) {
+//             console.log(i + " common");
+//         }
 //     }
 // }
+// console.log(showCommonRange());
+
+
+// let bla = function (from, to) {
+//     from = prompt(" enter first number", "");
+//     to = prompt("enter second number", "");
+//     for (let i = from; i <= to; i++) {
+//       let isCommon = true;
+//       for (let j = 2; j < i; j++) {
+//         if (i % j === 0) {
+//           isCommon = false;
+//         }
+//       }
+//       if (isCommon) {
+//         console.log(i);
+//       }
+//     }
+//   };
+//   bla();
