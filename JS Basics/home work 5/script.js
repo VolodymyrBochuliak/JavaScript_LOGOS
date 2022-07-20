@@ -112,10 +112,13 @@ function userPrimeNum (num) {
 // console.log(maxArgValue(2,5,3,8,1,10));
 
 function bigint_max(...args){
-    if (args.length < 1){ alert ('Max of empty list'); }
+    if (args.length < 1){ 
+        alert ('Max of empty list'); 
+    }
     m = args[0];
     args.forEach(a => {if (a > m) {m = a}});
     return m;
 }
 
 console.log(bigint_max(2,5,3,8,1,10));
+
