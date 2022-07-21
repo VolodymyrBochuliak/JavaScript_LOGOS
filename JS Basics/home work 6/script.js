@@ -47,7 +47,7 @@ console.log(arrowGeoProgSum (5, 2));
 //         }
 //     }
 //     return true;
-// }
+// };
 
 // const showCommonRange = (c, d) => {
 
@@ -59,23 +59,23 @@ console.log(arrowGeoProgSum (5, 2));
 //             console.log(i + " common");
 //         }
 //     }
-// }
+// };
 // console.log(showCommonRange());
 
 
-// let bla = function (from, to) {
-//     from = prompt(" enter first number", "");
-//     to = prompt("enter second number", "");
-//     for (let i = from; i <= to; i++) {
-//       let isCommon = true;
-//       for (let j = 2; j < i; j++) {
-//         if (i % j === 0) {
-//           isCommon = false;
-//         }
-//       }
-//       if (isCommon) {
-//         console.log(i);
-//       }
-//     }
-//   };
-//   bla();
+const fromTo = function (from, to) {
+    from = prompt(" enter first number", "");
+    to = prompt("enter second number", "");
+    for (let i = from; i <= to; i++) {
+      let isCommon = true;
+      for (let j = 2; j < i; j++) {
+        if (i % j === 0) {
+          isCommon = false;
+        }
+      }
+      if (isCommon) {
+        console.log(i);
+      }
+    }
+  };
+  fromTo();
