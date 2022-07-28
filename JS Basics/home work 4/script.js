@@ -104,7 +104,8 @@ do {
       console.log(result);
 
    } else if (numberPower = -numberPower) {
-      result = 1 / Math.pow(userNumber, numberPower);
+      // result = 1 / Math.pow(userNumber, numberPower);
+      result = 1 / userNumber**numberPower;
       console.log(result);
       
    } else {
