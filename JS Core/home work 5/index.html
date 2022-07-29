@@ -9,16 +9,56 @@
 </head>
 
 <style>
-	#square {
+	.square {
 		height: 200px;
 		width: 200px;
 		border: solid 2px black;
-		background-color: rgb(132, 0, 255);
+		background-color: purple;
 		margin: 50px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 15px;
+		color: white;
+	}
+	.list {
+		font-size: 25px;
+		list-style-type: square;
+	}
+	.cars {
+		width: 80%;
+		display: flex;
+		justify-content: space-around;
+		align-content: center;
+		/* background-image: url(); */
+	}
+	.car {
+		width: 300px;
+		height: 300px;
+		border: solid 3px black;
+		background-repeat: no-repeat;
 	}
 </style>
 <body>
-	<div id="square"></div>
+	<div id="square" class="square"></div>
+	
+	<div id="square2"  class="square">
+		<h4>У мене є секрет!</h4>
+	</div>
+	
+	<div class="cars">
+		<div class="car1 car"></div>
+		<div class="car2 car"></div>
+		<div class="car3 car"></div>
+	</div>
+
+	
+	<ul class="list">
+        <li class="list-item">red</li>
+        <li class="list-item">green</li>
+        <li class="list-item">yellow</li>
+        <li class="list-item">blue</li>
+    </ul>
     
     <script src="./script.js"></script>
 </body>
