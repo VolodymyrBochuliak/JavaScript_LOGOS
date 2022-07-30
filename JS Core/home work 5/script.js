@@ -1,23 +1,30 @@
 // №1
 
-// mouseOver1 = document.querySelector("#square").style.backgroundColor = "red";
-// mouseOver2 = document.querySelector("#square").style.backgroundColor = "yellow";
-// mouseOver3 = document.querySelector("#square").style.backgroundColor = "green";
+const bgColorArray = ['red','yellow','green','blue'];
+const square = document.querySelector('#square');
+const defaultColor = 'purple';
 
-const bgColorArray = ['red','yellow','green'];
+let colorIndex = 0;
 
-let e = bgColorArray[0];
-
-for ( let i = 1; i <= bgColorArray.length; i++) {
+function mouseEnterHandler () {
+    square.style.backgroundColor = bgColorArray[colorIndex];
     
-    document.getElementById("square").addEventListener('mouseover', () => {
-        document.querySelector("#square").style.backgroundColor = e;
-    });
-    document.getElementById("square").addEventListener("mouseout", () => {
-        document.getElementById("square").style.backgroundColor = "purple";
-    });
+    if (colorIndex === bgColorArray.length - 1) {
+        colorIndex = 0;
+    } else {
+        console.log(colorIndex);
+        colorIndex++;
+    }
+}
+function mouseLeaveHandler () {
+    square.style.backgroundColor = defaultColor ;
+    // console.log(colorIndex);
+    
 }
 
+// console.log(square);
+square.addEventListener('mouseover', mouseEnterHandler);
+square.addEventListener('mouseout', mouseLeaveHandler);
 
 // #2
 
@@ -46,35 +53,23 @@ document.getElementById("square2").addEventListener('mouseover', mouseOver);
 document.getElementById("square2").addEventListener('mousedown', mouseDown);
 document.getElementById("square2").addEventListener('mouseup', mouseOver);
 document.getElementById("square2").addEventListener('mouseout', mouseOut);
-// document.getElementById("square2").removeEventListener('mouseout', mouseOver);  // чому з remove  не працює ?
-// document.getElementById("square2").removeEventListener('mouseout', mouseOver);
 
 // #3
-let car1 = document.querySelector('.car1');
-let car2 = document.querySelector('.car2');
-let car3 = document.querySelector('.car3');
 
-let carsArray = ['.car1', '.car2', '.car3'];
+let car = document.querySelectorAll('.car');
+console.log(car);
 
+for (i = 0; i < car.length; i++) {
+    car[i].addEventListener('click', backgroundClickChange);
+  } 
 
-function backgroundClickChange () {
-    
-    let newBGI = prompt("input url ",'');
-
-    for (i = 1; i <= carsArray.length; i++) {
-        let e = carsArray[0];
-        let BGI = document.querySelector(e).style.backgroundImage = `url(${newBGI})`;
-        console.log(BGI);
+function backgroundClickChange (event) {
+    console.log(event);
+    const newBGI = prompt("input url ",'');
+    if (newBGI) {
+    event.target.style.backgroundImage = `url(${newBGI})`;
     }
-    // return BGI;
 }
-
-https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRtj9Vri2ZroUgkZYg4K8nqJ8NXCnJdyndSWGHDFLDSSc544kW8aZH8f51yP9oUFJSYvA&usqp=CAU
-
-car1.addEventListener('click', backgroundClickChange);
-car2.addEventListener('click', backgroundClickChange);
-car3.addEventListener('click', backgroundClickChange);
-
 
 // №4
 

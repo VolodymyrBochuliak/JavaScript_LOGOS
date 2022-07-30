@@ -1,13 +1,16 @@
 // __________ Arrays__________
 // #1
-const arrayNum = [1,2,3];
-// const arrayNum = [];
+// const arrayNum = [1,2,3];
+const arrayNum = [];
 
 function arrCopy(arr) {
     arrayNum.push(arr);
     return console.log(arrayNum);
 }
 let arr1 = arrCopy([4,5]);
+let arr2 = arrCopy([1,2,3,[4,5]]);
+// const arrayNum = [1,2,3];
+
 
 // #2
 
