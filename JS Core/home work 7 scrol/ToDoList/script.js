@@ -4,7 +4,6 @@ const inputField = document.querySelector('.input-field');
 const btn = document.querySelector('.action-btn');
 
 const listItems = [];
-let counter = 0;
 
 const addItem = () => {
     // const value = `- ${inputField.value}`;
@@ -31,7 +30,6 @@ const addItem = () => {
   
     item.textContent = value.charAt(0).toUpperCase() + value.slice(1);
     
-    counter++;
     item.prepend(checkboxRemoveItem);
     // item.prepend(removeBtn);
     
