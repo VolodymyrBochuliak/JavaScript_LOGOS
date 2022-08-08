@@ -6,10 +6,9 @@ const btn = document.querySelector('.action-btn');
 const listItems = [];
 
 const addItem = () => {
-    // const value = `- ${inputField.value}`;
     const value = inputField.value;
         console.log(value);
-        if (value === null) {
+        if (!value) {
             alert("Please write something in field");
         }
     
@@ -17,22 +16,13 @@ const addItem = () => {
     
     const checkboxRemoveItem = document.createElement('input');
     checkboxRemoveItem.type = "checkbox";
-    // const removeBtn = document.createElement('span');
-    // removeBtn.textContent = '# ';
-    // removeBtn.classList.add("removing__item");
-
-    // const removingItem = document.querySelector('.removing__item');
-    // removingItem.style.cssText = "cursor: pointer; ";
-    
+        
     checkboxRemoveItem.addEventListener('click', () => removeElement(item));
-    // removeBtn.addEventListener('click', () => removeElement(item));
-    // item.textContent = value;
-  
+    
     item.textContent = value.charAt(0).toUpperCase() + value.slice(1);
     
     item.prepend(checkboxRemoveItem);
-    // item.prepend(removeBtn);
-    
+        
     list.append(item);
     
     inputField.value = '';
