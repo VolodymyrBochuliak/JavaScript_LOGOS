@@ -10,22 +10,24 @@ const addItem = () => {
         console.log(value);
         if (!value) {
             alert("Please write something in field");
+        } else {
+
+            const item = document.createElement('li');
+            
+            const checkboxRemoveItem = document.createElement('input');
+            checkboxRemoveItem.type = "checkbox";
+                
+            checkboxRemoveItem.addEventListener('click', () => removeElement(item));
+            
+            item.textContent = value.charAt(0).toUpperCase() + value.slice(1);
+            
+            item.prepend(checkboxRemoveItem);
+                
+            list.append(item);
+            
+            inputField.value = '';
         }
     
-    const item = document.createElement('li');
-    
-    const checkboxRemoveItem = document.createElement('input');
-    checkboxRemoveItem.type = "checkbox";
-        
-    checkboxRemoveItem.addEventListener('click', () => removeElement(item));
-    
-    item.textContent = value.charAt(0).toUpperCase() + value.slice(1);
-    
-    item.prepend(checkboxRemoveItem);
-        
-    list.append(item);
-    
-    inputField.value = '';
 };
 
 btn.addEventListener('click', addItem);
