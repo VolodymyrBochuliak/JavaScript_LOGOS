@@ -25,23 +25,39 @@ body {
 .upper__container {
     position: relative;
 }
-    .upper__container-hiden {
-        position: absolute;
-        width: 68%;
-        top: 40px;
-        display: none;
-
+    .upper__container__content {
+        margin-left: 15px;
     }
-        .container__choose {
-            padding-left: 15px;
+
+.upper__container-hiden {
+    position: absolute;
+    width: 68%;
+    top: 40px;
+    display: none;
+
+}
+    .container__choose {
+        padding-left: 15px;
+    }
+    .container__choose h3 {
+        font-size: 22px;
+        font-style: italic;
+        margin: 15px 0;
+    }
+        .container__inner {
+            display: block;
         }
-        .container__choose h3 {
-            font-size: 22px;
-            font-style: italic;
-            margin: 15px 0;
-        }
-            .container__inner {
+            .table {    
                 display: none;
+                padding-left: 25px;
+            }
+            .list {
+                display: none;
+                padding-left: 25px;
+            }
+            .title {
+                margin: 13px ;
+                font-size: 15px;
             }
 
 .buttons__container {
@@ -77,6 +93,7 @@ body {
     .create__btn{ 
         background-color: rgb(15, 102, 15);
         margin: 10px 0 10px 15px;
+        display: none;
        
     }
     .lower__container {

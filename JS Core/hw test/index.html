@@ -12,6 +12,9 @@
 <body>
     <section class="main">
         <div class="upper__container container">
+            <div class="upper__container__content">
+
+            </div>
         </div>
         <div class="upper__container-hiden container">
             <div class="container__choose">
@@ -23,39 +26,35 @@
             </div>
             <div class="container__inner">
                 <div class="table">
-                    <div class="tableRow">
-                      Count TR:
-                      <input class="CountTR" type="text" value="" />
+                    <div class="tableRow title"> Count of rows:
+                      <input class="countTR" type="text" value="" />
                     </div>
-                    <div class="tableDate">
-                      Count TD: <input class="CountTD" type="text" value="" />
+                    <div class="tableDate title"> Count of cells: 
+                        <input class="countTD" type="text" value="" />
                     </div>
                     <div class="tabelStyle">
-                      <div class="tabelStyle-title">Add style to your table:</div>
-                      <div class="tableWidth">
-                        Width of TD:
+                      <div class="tabelStyle title">
+                        <h3>Add style to your table:</h3>
+                      </div>
+                      <div class="tableWidth title"> Width of TD:
                         <input class="widthTD" type="text" value="" />
                       </div>
-                      <div class="tableHeight">
-                        Height of TD:
+                      <div class="tableHeight title"> Height of TD:
                         <input class="heightTD" type="text" value="" />
                       </div>
                     </div>
                     <div class="borderStyle">
-                      <div class="widthBorder">
-                        Width of Border
+                      <div class="widthBorder title"> Width of Border
                         <input class="borderWidth" type="text" value="" />
                       </div>
-                      <div class="typeBorder-title">
-                        Type of Border
-                        <select class="TypeBorder">
+                      <div class="typeBorder title"> Type of Border
+                        <select class="borderTypes">
                             <option class="borderType" value="solid">solid</option>
                             <option class="borderType" value="dotted">dotted</option>
                         </select>
                       </div>
-                      <div class="colorBorder-title">
-                        Color of Border
-                        <select class="ColorBorder">
+                      <div class="colorBorder title"> Color of Border
+                        <select class="borderColors">
                             <option class="borderColor" value="yellow">yellow</option>
                             <option class="borderColor" value="red">red</option>
                             <option class="borderColor" value="blue">blue</option>
@@ -64,21 +63,21 @@
                       </div>
                     </div>
                   </div>
-                  <div class="chooseList">
-                    <div class="chooseListCount">
-                        Count Li:
-                        <input class="CountLI" type="text" value="" />
-                    </div>
-                    <div class="typeOfMarks">
-                        Type of marks:
-                        <select class="marksList" >
-                            <option class="marks" value="circle">circle</option>
-                            <option class="marks" value="square">square</option>
-                            <option class="marks" value="disc">disc</option>
-                      </select>
+                  <div class="list">
+                        <div class="listCount title"> Count Li:
+                            <input class="countLI" type="text" value="" />
+                        </div>
+                        <div class="typeMarks title"> Type of marks:
+                            <select class="marksList" >
+                                <option class="mark" value="circle">circle</option>
+                                <option class="mark" value="square">square</option>
+                                <option class="mark" value="disc">disc</option>
+                        </select>
+                        </div>
                     </div>
 
-                <button class="create__btn btn">Create element</button>
+                <button class="create__btn createTable btn">Create table</button>
+                <button class="create__btn createList btn">Create list</button>
             </div>
         </div>
         <div class="buttons__container">
@@ -88,8 +87,6 @@
         <div class="lower__container container">
             <div class="lower__container__hide">
                 <textarea class="lower__container__inner" id="textarea">
-                    <p>Lorem ipsum dolor sit amet.</p>
-                    <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor sit amet.</p>
                     <p>Lorem ipsum dolor sit amet.</p>
