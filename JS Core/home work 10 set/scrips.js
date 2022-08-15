@@ -102,6 +102,12 @@ const result = newArr8.map((element) => {
 console.log(result);
 
 
-
+function list(a,b,...arg){
+    console.log(arg)
+ }
+ list(1,2,3,4,5)
+ 
+ 
+ 
 
 

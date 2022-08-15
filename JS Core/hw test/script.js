@@ -5,6 +5,7 @@ const outputText = document.querySelector('.upper__container__content');
 const lowerContainer = document.querySelector('.lower__container');
 const btnContainer = document.querySelector('.buttons__container');
 const inputCodeHTML = document.querySelector('#textarea');
+
 outputText.innerHTML = inputCodeHTML.textContent;
 
 const editBtn = document.querySelector('.edit__btn');
@@ -14,18 +15,16 @@ const hideEditContainer = document.querySelector('.lower__container__hide');
 const styleContainer = document.querySelector('.style__container-hiden');
 
 // функціонал редагування даних
+const addBtn = document.querySelector('.add__btn');
+const saveBtn = document.querySelector('.save__btn');
 editBtn.addEventListener('click', () => {
     
     hideEditContainer.style.cssText = 'display: block;';
     styleContainer.style.cssText = 'display: none;';
     
-    const addBtn = document.querySelector('.add__btn');
-    const saveBtn = document.querySelector('.save__btn');
-    
-    // saveBtn.addEventListener('click', () => {
-    //     outputText.innerHTML = inputCodeHTML.value;
-    // });
-    
+    // const addBtn = document.querySelector('.add__btn');
+    // const saveBtn = document.querySelector('.save__btn');
+        
     const addBlock = document.querySelector('.upper__container-hiden');
         addBtn.addEventListener('click', () => {
         addBlock.style.display = 'block';
@@ -36,7 +35,6 @@ editBtn.addEventListener('click', () => {
     });
     // Вибір елемента який додаєм
     const containerShow = document.querySelector('.container__inner');
-    // const createBtn = document.querySelector('.create__btn');
     const createTableBtn = document.querySelector('.createTable');
     const createListBtn = document.querySelector('.createList');
     
@@ -54,47 +52,52 @@ editBtn.addEventListener('click', () => {
             
         const countRow = document.querySelector('.countTR');
         const countCell = document.querySelector('.countTD');
-        const widthTD = document.querySelector(".widthTD").value;
-        const heightTD = document.querySelector(".heightTD").value;
-        const borderWidth = document.querySelector(".borderWidth").value;
+        const widthTD = document.querySelector(".widthTD");
+        const heightTD = document.querySelector(".heightTD");
+        const borderWidth = document.querySelector(".borderWidth");
         const selectedBorderType = document.querySelector(".borderType").value;
         const selectedBorderColor = document.querySelector(".borderColors").value;
         
+        const table = document.createElement("table");
+        table.classList.add('tableStyle');
+            // inputCodeHTML.append(table);
+
+
         // Додаєм таблицю в textarea
         createTableBtn.addEventListener('click', () => {        
             addBlock.style.display = 'none';
             upperContainer.style.display = 'block';
             lowerContainer.style.display = 'block';
             btnContainer.style.display = 'block';
-
-            
-            const table = document.createElement("table");
-            inputCodeHTML.append(table);
-            table.classList.add('tableStyle');
-            
+                        
             let numberRows = countRow.value;
             let numberCells = countCell.value;
 
-            table.setAttribute("border", borderWidth);
+            table.setAttribute("border", borderWidth.value);
                         
             for (let i = 0; i <= numberRows; i++) {
                 const tableRow = document.createElement("tr");
-                table.appendChild(tableRow);
-                console.log(selectedBorderColor);
+                table.append(tableRow);
 
                 for (let j = 0; j <= numberCells; j++) {
                     const tableCell = document.createElement("td");
-                    tableRow.appendChild(tableCell);
+                    tableRow.append(tableCell);
                     
-                    tableCell.setAttribute("width", widthTD);
-                    tableCell.setAttribute("height", heightTD);
+                    tableCell.setAttribute("width", `${widthTD.value}px`);
+                    tableCell.setAttribute("height", `${heightTD.value}px`);
+                    tableCell.setAttribute("border", `${borderWidth.value}px`);
+                                      
                     tableCell.style.borderColor = selectedBorderColor;
                     tableCell.style.borderStyle = selectedBorderType;
                 }
             }
 
-            const tableHTML = document.querySelector('.tableStyle').innerHTML;
-            inputCodeHTML.append(tableHTML);
+            inputCodeHTML.append(table.innerHTML);
+            
+            saveBtn.addEventListener('click', () => {
+               outputText.append(table);
+                
+            });
            
         });
     
@@ -131,17 +134,21 @@ editBtn.addEventListener('click', () => {
             listLi.textContent = "list";
             listUl.append(listLi);
         }
-        const listHTML = document.querySelector('.listStyle').innerHTML;
-            inputCodeHTML.append(listHTML);
-    
-    });
+        const listHTML = document.querySelector('.listStyle');
+        inputCodeHTML.append(listHTML.innerHTML);  // Потрібно якось зробити щоб добавлявсякод htlm з тегом таблиці, тоді запрацює
+        
+        saveBtn.addEventListener('click', () => {
+            outputText.innerHTML = inputCodeHTML.value;
+            // outputText.innerHTML = inputCodeHTML.textContent;
+                   
+        });
 
-    saveBtn.addEventListener('click', () => {
-        outputText.innerHTML = inputCodeHTML.value;
-    
     });
-    
+            
 });
+
+
+
 // Функціонал зміни стилів
 styleBtn.addEventListener('click', () => {
     
