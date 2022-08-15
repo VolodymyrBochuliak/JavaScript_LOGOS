@@ -55,8 +55,8 @@ editBtn.addEventListener('click', () => {
         const widthTD = document.querySelector(".widthTD");
         const heightTD = document.querySelector(".heightTD");
         const borderWidth = document.querySelector(".borderWidth");
-        const selectedBorderType = document.querySelector(".borderType").value;
-        const selectedBorderColor = document.querySelector(".borderColors").value;
+        const selectedBorderType = document.querySelector(".borderType");
+        const selectedBorderColor = document.querySelector(".borderColors");
         
         const table = document.createElement("table");
         table.classList.add('tableStyle');
@@ -87,8 +87,8 @@ editBtn.addEventListener('click', () => {
                     tableCell.setAttribute("height", `${heightTD.value}px`);
                     tableCell.setAttribute("border", `${borderWidth.value}px`);
                                       
-                    tableCell.style.borderColor = selectedBorderColor;
-                    tableCell.style.borderStyle = selectedBorderType;
+                    tableCell.style.borderColor = selectedBorderColor.value;
+                    tableCell.style.borderStyle = selectedBorderType.value;
                 }
             }
 

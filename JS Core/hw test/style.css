@@ -27,7 +27,11 @@ body {
 }
     .upper__container__content {
         margin-left: 15px;
+        /* overflow-y: scroll; */
+        overflow: auto;
     }
+
+    
 
 .upper__container-hiden {
     position: absolute;
