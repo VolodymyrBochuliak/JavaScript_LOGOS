@@ -40,11 +40,14 @@ let stopwatch;
 const start = document.getElementById('start');
 start.addEventListener('click', () => {
     stopwatch = setInterval(() => { timer(); }, 10);
+    start.disabled = true;
 });
 
 const pause = document.getElementById('pause');
 pause.addEventListener('click', () => {
     clearInterval(stopwatch);
+    start.disabled = false;
+
 });
 
 const reset = document.getElementById('reset');
@@ -109,73 +112,85 @@ const hoursSet = document.querySelector('.hourTT');
 const minutesSet = document.querySelector('.minuteTT');
 const secondsSet = document.querySelector('.secondTT');
 
-let hours = hoursSet.value;
-let minutes = minutesSet.value; 
-let seconds = secondsSet.value; 
+const hoursLabel = document.querySelector('#hourTimer');
+const minutesLabel = document.querySelector('#minuteTimer');
+const secondsLabel = document.querySelector('#secondTimer');
 
-function setTimer() {
-    document.querySelector('#hourTimer').innerText = returnData(hours);
-    document.querySelector('#minuteTimer').innerText = returnData(minutes);
-    document.querySelector('#secondTimer').innerText = returnData(seconds);
+
+
+function setTimer({ hours, minutes, seconds }) {
+    hoursLabel.innerText = returnData(hours);
+    minutesLabel.innerText = returnData(minutes);
+    secondsLabel.innerText = returnData(seconds);
 }
 
 function returnData(number) {
-    return number <= 10 ? number : `0${number}`;
+    return number >= 10 ? number : `0${number}`;
 }
 
 const timerContainer = document.querySelector('.timer_main'); // коли сплине час змінить колір рамки на червоний
 
+function calculateTimerSeconds(time) {
+    let result = 0;
+    result += time.hours * 60 * 60;
+    result += time.minutes * 60;
+    result += time.seconds;
+    return result;
+}
+
+function formatTimerSeconds(totalSeconds) {
+    const _hours = Math.floor(totalSeconds / 60 / 60);
+    const _minutes = Math.floor((totalSeconds / 60) - (_hours * 60));
+    const _seconds = Math.floor(totalSeconds - (_hours * 60 * 60) - (_minutes * 60));
+    
+    return { hours: _hours, minutes: _minutes, seconds: _seconds };
+}
 
 const startTimer = document.querySelector('.startTimer');
 startTimer.addEventListener('click', () => {
-    
-    const interval = setInterval ( () => {
-        if (hours > 0) {
-            hours--;
-        }
-        if (hours <= 0) { 
-            hours = 0;
-            minutes--;
-        }
-        if (minutes <= 0) {
-            minutes = 0;
-            seconds--;
-        }
-        if (seconds <= 0) {
-            seconds = 0;
+
+    const hours = +hoursSet.value;
+    const minutes = +minutesSet.value; 
+    const seconds = +secondsSet.value;
+
+    const formattedTime = {
+        hours: hours,
+        minutes: minutes,
+        seconds: seconds
+    }
+
+    let totalSeconds = calculateTimerSeconds(formattedTime);
+
+    const interval = setInterval (() => {
+        if (totalSeconds === 0) {
             clearInterval(interval);
             timerContainer.style.cssText = 'border: 4px solid red;';
         }
+        const time = formatTimerSeconds(totalSeconds);
+        setTimer(time);
+        totalSeconds--;
     }, 1000);
-    
-    setTimer();
-    
-    
-    console.log(hours);
-    console.log(minutes);
-    console.log(seconds);
-    
     
     const stopTimer = document.querySelector('.stopTimer');
     stopTimer.addEventListener('click', () => {
         clearInterval(interval);
-        console.log(seconds);
+        // console.log(seconds);
 
     });
     
+    const resetTimer = document.querySelector('.resetTimer');
+    resetTimer.addEventListener('click', () => {
+        clearInterval(interval)
+        hoursSet.value = '0';
+        minutesSet.value = '0';
+        secondsSet.value = '0';
+        document.querySelector('#hourTimer').innerText = '--';
+        document.querySelector('#minuteTimer').innerText = '--';
+        document.querySelector('#secondTimer').innerText = '--';
+        timerContainer.style.cssText = 'border: 2px solid green;';
+
+    });
  
 });
 
 
-const resetTimer = document.querySelector('.resetTimer');
-resetTimer.addEventListener('click', () => {
-    
-    hoursSet.value = '0';
-    minutesSet.value = '0';
-    secondsSet.value = '0';
-    document.querySelector('#hourTimer').innerText = '--';
-    document.querySelector('#minuteTimer').innerText = '--';
-    document.querySelector('#secondTimer').innerText = '--';
-    timerContainer.style.cssText = 'border: 2px solid green;';
-
-});
