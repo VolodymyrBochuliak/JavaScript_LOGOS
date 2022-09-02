@@ -1,0 +1,101 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(180, 180, 180);
+}
+/* button {
+    height: 40px;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 5px;
+    border: none;
+    background: #ffffff;
+    color: #303030;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    vertical-align: top;
+    padding: 13px;
+    position: relative;
+} */
+.keyboard {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(180, 180, 180);
+    user-select: none;
+    transition: bottom 0.4s;
+}
+
+.keyboard__input {
+    width: 700px;
+    height: 200px;
+    color: rgb(44, 44, 44);
+    border-radius: 5px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    margin-top: 120px;
+    resize: none;
+    padding: 15px;
+    font-size: 15px;
+
+}
+
+.keyboard__keys {
+    text-align: center;
+    justify-content: space-between;
+    width: 700px;
+}
+
+.keyboard__key {
+    height: 40px;
+    width: 40px;
+    max-width: 90px;
+    margin: 3px;
+    border-radius: 5px;
+    background: #ffffff;
+    color: #303030;
+    font-size: 20px;
+    outline: none;
+    cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    vertical-align: top;
+    /* padding: 0; */
+    position: relative;
+}
+
+.keyboard__key:active {
+    background-color: rgb(133, 133, 133);
+
+}
+/* button:active {
+    background-color: rgb(133, 133, 133);
+
+} */
+
+.keyboard__key--wide {
+    width: 90px;
+}
+
+.keyboard__key--extraWide {
+    width: 700px;
+}
+
+.keyboard__key--activatable {
+    position: relative;
+    background: #ffffff;
+
+}
+.keyboard__key--activ::after {
+    position: absolute;
+    background-color: rgb(133, 133, 133);
+}
