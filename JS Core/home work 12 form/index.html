@@ -11,7 +11,7 @@
     <div class="left_side">
         <form action="" id="form" >
             <div class="inputFildHolder">
-                <label for="userLogin" class="labelStyle">Login</label>
+                <label for="userLogin" class="labelStyle" >Login</label>
                 <input required type="text" name="login" placeholder="Enter login" class="inputFild" id="userLogin">
             </div>
             <div class="inputFildHolder">
@@ -22,7 +22,10 @@
                 <label for="mail" class="labelStyle">Email address</label>
                 <input required type="email" name="email" placeholder="Enter email" class="inputFild" id="mail">
             </div>
-            <button class="actionBtn"> Add User </button> 
+            <div class="btmContainer">
+                <button class="addBtn" disabled> Add User </button> 
+                <button class="saveBtn"> Save User </button> 
+            </div>
         </form>
     </div>
 
@@ -36,15 +39,7 @@
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
-            <!-- <tr class="table_row">
-                <td>1)</td>
-                <td>APload</td>
-                <td>123456789</td>
-                <td>Apload@gmail.com</td>
-                <td><button class="edit_btn btn">Edit</button></td>
-                <td><button class="delete_btn btn">Delete</button></td>
-            </tr> -->
-          
+                     
        </table>
     </div>
 
