@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>hw 12</title>
+</head>
+<body>
+    <div class="left_side">
+        <form action="" id="form" >
+            <div class="inputFildHolder">
+                <label for="userLogin" class="labelStyle">Login</label>
+                <input required type="text" name="login" placeholder="Enter login" class="inputFild" id="userLogin">
+            </div>
+            <div class="inputFildHolder">
+                <label for="pass" class="labelStyle">Password</label>
+                <input required type="password" name="Enter password" placeholder="Password" class="inputFild" id="pass">
+            </div>
+            <div class="inputFildHolder">
+                <label for="mail" class="labelStyle">Email address</label>
+                <input required type="email" name="email" placeholder="Enter email" class="inputFild" id="mail">
+            </div>
+            <button class="actionBtn"> Add User </button> 
+        </form>
+    </div>
+
+    <div class="right_side">
+       <table class="table_inner">
+            <tr class="table_head">
+                <th>#</th>
+                <th>Login</th>
+                <th>Password</th>
+                <th>Email</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+            <!-- <tr class="table_row">
+                <td>1)</td>
+                <td>APload</td>
+                <td>123456789</td>
+                <td>Apload@gmail.com</td>
+                <td><button class="edit_btn btn">Edit</button></td>
+                <td><button class="delete_btn btn">Delete</button></td>
+            </tr> -->
+          
+       </table>
+    </div>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>
