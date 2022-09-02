@@ -85,6 +85,11 @@ body {
     font-size: 16px;
     height: 40px;
 }
+.actionBtn:disabled {
+    background-color: rgb(45, 91, 131);
+
+}
+
 .submit {
     font-size: 16px;
 }

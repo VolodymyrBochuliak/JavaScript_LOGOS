@@ -33,18 +33,22 @@ function FildValid (regExp, fild) {
 
 firstName.addEventListener('blur', () => {
     FildValid(textRegEx, firstName);
+    validateSignUp();
 });
 
 lastName.addEventListener('blur', () => {
     FildValid(textRegEx, lastName);
+    validateSignUp();
 });
 
 email.addEventListener('blur', () => {
     FildValid(mailRegEx, email);
+    validateSignUp();
 });
 
 password.addEventListener ('blur', () => {
     FildValid(passRegEx, password);
+    validateSignUp();
 });
 
 // Showing a 'red notice'
@@ -53,13 +57,13 @@ function notValid (){
     error_message.style.cssText = 'visibility: visible;';
 }
 
-
 function validateSignUp() {
     
     if (FildValid(textRegEx, firstName) &&
         FildValid(textRegEx, lastName) &&
         FildValid(mailRegEx, email) &&
-        FildValid(passRegEx, password) == true
+        FildValid(passRegEx, password) &&
+        terms.checked
         ){
 
         console.log('access granted');
@@ -71,27 +75,8 @@ function validateSignUp() {
     }
 }
 
-// let usersArr = [];
-
 terms.addEventListener('click', () => {
-
-    if (terms.checked) {
-        validateSignUp();
-        console.log("checked");
-        
-        // let fn = firstName.value;
-        // let ln = lastName.value;
-
-        // let firstUser = {
-        //     F_name: fn,
-        //     L_name: ln,
-        //     Email: email.value,
-        //     pass: password.value
-        // };
-        // usersArr.push(firstUser);
-    } else {
-        console.log("not checked");
-    }
+    validateSignUp();
 });
 
 const greetingBanner = document.querySelector('.greetings');
@@ -104,8 +89,7 @@ form.addEventListener('submit', handleForm);
 signUp.addEventListener('click', () => {
     
     greetingBanner.style.cssText = 'visibility: visible;';
-        document.body.disabled = true;
-    
+    document.body.disabled = true;
     
 });
 
