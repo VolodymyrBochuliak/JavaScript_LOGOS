@@ -17,19 +17,25 @@ const styleContainer = document.querySelector('.style__container-hiden');
 // функціонал редагування даних
 const addBtn = document.querySelector('.add__btn');
 const saveBtn = document.querySelector('.save__btn');
+
+saveBtn.addEventListener('click', () => {
+    outputText.innerHTML = inputCodeHTML.value;
+    // outputText.innerHTML = inputCodeHTML.textContent;
+           
+});
+
 editBtn.addEventListener('click', () => {
     
     hideEditContainer.style.cssText = 'display: block;';
     styleContainer.style.cssText = 'display: none;';
-    
-    // const addBtn = document.querySelector('.add__btn');
-    // const saveBtn = document.querySelector('.save__btn');
-        
+            
     const addBlock = document.querySelector('.upper__container-hiden');
-        addBtn.addEventListener('click', () => {
+       
+    addBtn.addEventListener('click', () => {
         addBlock.style.display = 'block';
         upperContainer.style.display = 'none';
-        lowerContainer.style.display = 'none';
+        const lower = document.querySelector('.lower');
+        lower.style.display = 'none';
         btnContainer.style.display = 'none';
 
     });
@@ -67,7 +73,8 @@ editBtn.addEventListener('click', () => {
         createTableBtn.addEventListener('click', () => {        
             addBlock.style.display = 'none';
             upperContainer.style.display = 'block';
-            lowerContainer.style.display = 'block';
+            const lower = document.querySelector('.lower');
+            lower.style.display = 'block';
             btnContainer.style.display = 'block';
                         
             let numberRows = countRow.value;
@@ -75,11 +82,11 @@ editBtn.addEventListener('click', () => {
 
             table.setAttribute("border", borderWidth.value);
                         
-            for (let i = 0; i <= numberRows; i++) {
+            for (let i = 0; i < numberRows; i++) {
                 const tableRow = document.createElement("tr");
                 table.append(tableRow);
 
-                for (let j = 0; j <= numberCells; j++) {
+                for (let j = 0; j < numberCells; j++) {
                     const tableCell = document.createElement("td");
                     tableRow.append(tableCell);
                     
@@ -91,11 +98,11 @@ editBtn.addEventListener('click', () => {
                     tableCell.style.borderStyle = selectedBorderType.value;
                 }
             }
-
+          
             inputCodeHTML.append(table.innerHTML);
             
             saveBtn.addEventListener('click', () => {
-               outputText.append(table);
+                outputText.append(table);
                 
             });
            
@@ -117,7 +124,8 @@ editBtn.addEventListener('click', () => {
     createListBtn.addEventListener('click', () => {        
         addBlock.style.display = 'none';
         upperContainer.style.display = 'block';
-        lowerContainer.style.display = 'block';
+        const lower = document.querySelector('.lower');
+            lower.style.display = 'block';
         btnContainer.style.display = 'block';
 
         const marks = document.querySelector('.marksList').value;
@@ -154,6 +162,7 @@ styleBtn.addEventListener('click', () => {
     
     styleContainer.style.cssText = 'display: block;';
     hideEditContainer.style.cssText = 'display: none;';
+    // lowerContainer.style.cssText = 'display: block;';
 
     const textColor = document.querySelector(".text__color");
     const backgroundColor = document.querySelector(".background__color");
@@ -169,11 +178,11 @@ styleBtn.addEventListener('click', () => {
             outputText.style.fontSize = fontSizeButton.value;
         });
     }
-// Вибір стилю шрифта !!!! Не працює
-    function getSelectType (params) {
-        const chooseOption = document.querySelector("#choose-option").value;
-        outputText.style.fontFamily = chooseOption;
-    }
+// Вибір стилю шрифта
+    const chooseOption = document.querySelector("#choose-option");
+    chooseOption.addEventListener('change', () => {
+        outputText.style.fontFamily = chooseOption.value;
+    });
 
     
 // Стилі тексту
@@ -196,8 +205,15 @@ styleBtn.addEventListener('click', () => {
     });
 
 // Кольори тексту та фону
+const colorsBG = document.querySelector('.colorsBG');
+const colorsFont = document.querySelector('.colorsFont');
+
     textColor.addEventListener("click", () => {
         visible.style.display = "block";
+        
+        colorsBG.style.display = "none";
+        colorsFont.style.display = "flex";  
+
         const colorT = document.querySelectorAll(".text-color");
         
         for (let item of colorT) {
@@ -210,6 +226,10 @@ styleBtn.addEventListener('click', () => {
     });
     backgroundColor.addEventListener("click", () => {
         visible.style.display = "block";
+        
+        colorsFont.style.display = "none";
+        colorsBG.style.display = "flex";
+
         const colorBG = document.querySelectorAll(".bg-color");
 
         for (let item of colorBG) {
