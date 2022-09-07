@@ -57,3 +57,80 @@ console.log(str1.ucWords("hello hello hello"));
 
 /////////////////////////////////////////////////////////
 
+class CoffeeMaker {
+    
+    constructor(name) {
+        this.name = name;
+    }
+    on() {
+        console.log('coffee is making, wait');
+    }
+
+    off() {
+        console.log('coffee is done, take it');
+    }
+}
+
+class DripCoffeeMaker extends CoffeeMaker {
+    constructor (name, ingredient) {
+        super(name);
+        this.ingredient = ingredient;
+    }
+    eddMilk () {
+        console.log(`${this.ingredient} was added`);
+    }
+}
+
+class HornCoffeeMaker extends CoffeeMaker {
+    constructor (name, technology) {
+        super(name);
+        this.technology = technology;
+    }
+    makeCream () {
+        console.log(`${this.technology} technology make your coffee so creamy`);
+    }
+}
+
+class AutoCoffeeMaker extends CoffeeMaker {
+    constructor (name, ingredient_1, ingredient_2, ingredient_3) {
+        super(name);
+        this.ingredient_1 = ingredient_1;
+        this.ingredient_2 = ingredient_2;
+        this.ingredient_3 = ingredient_3;
+    }
+    eddIngredient () {
+        console.log('milk was added');
+    }
+}
+
+const CM1 = new DripCoffeeMaker ('Delongee', 'milk');
+
+CM1.on();
+setTimeout (()=> {
+    CM1.eddMilk();
+}, 2500);
+setTimeout (()=> {
+    CM1.off();
+}, 5000);
+
+const CM2 = new HornCoffeeMaker ("RTT", 'hot steam');
+setTimeout (()=> {
+    CM2.on();
+    CM2.makeCream();
+    CM2.off();
+    console.log(CM2.technology);
+}, 6000);
+
+const CM3 = new AutoCoffeeMaker ("Saecco", 'instant coffee', 'chocolate', 'sugar');
+setTimeout (()=> {
+    CM3.on();
+    // CM3.makeCream();
+    CM3.off();
+    console.log(CM3.ingredient_2);
+}, 7000);
+
+
+
+
+
+
