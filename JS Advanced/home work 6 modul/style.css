@@ -1,0 +1,48 @@
+body {
+    display: flex;
+    width: 100vw;
+    justify-content: space-around;
+    margin-top: 100px;
+    background-color: rgb(222, 205, 205);
+
+}
+ .container {
+    width: 30%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgb(252, 224, 224);
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+.output_text_fild {
+    width: 80%;
+    height: 25%;
+    border-radius: 5px;
+    border: 1px solid gray;
+    background-color: rgb(252, 213, 213);
+
+}
+.storage_container input {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    background-color: rgb(252, 213, 213);
+    border: 1px solid gray;
+   
+}
+#quantity {
+    height: 30px;
+    width: 200px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+button {
+    width: 70px;
+    height: 30px;
+    background-color: rgb(213, 212, 212);
+    border-radius: 5px;
+    border: 1px solid gray;
+}
