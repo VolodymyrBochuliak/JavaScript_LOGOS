@@ -22,6 +22,8 @@ const shop = (function (){
     let vinePrice = 70;
     let pepsiPrice = 35;
     
+
+    
     function checkBank() {
         return `Bank: ${total}`;
     }

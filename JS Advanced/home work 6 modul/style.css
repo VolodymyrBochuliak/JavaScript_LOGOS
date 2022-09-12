@@ -1,6 +1,6 @@
 body {
     display: flex;
-    width: 100vw;
+    width: 99vw;
     justify-content: space-around;
     margin-top: 100px;
     background-color: rgb(222, 205, 205);
