@@ -3,7 +3,8 @@
 function Sum (num) {
     return function inner (n) {
         // console.log(num);
-        return num = num + n;
+        num += n;
+        return num;
     };
 }
 
@@ -38,7 +39,6 @@ const customerChoicePepsi = document.querySelector('#pepsi_choice');
 
 const user_recept = document.querySelector('.receipt');
 
-
 const shop = (function (){
 /////////////////////////////////////////////////
     function fildValid () {
@@ -54,6 +54,7 @@ const shop = (function (){
     customer_fild.addEventListener ('change', () => {
         fildValid ();
     });
+  
 //////////////////////////////////////////////
     let total = 1000;
     let beerCount = 100;
@@ -68,6 +69,7 @@ const shop = (function (){
     let beerPrice = 40;
     let vinePrice = 70;
     let pepsiPrice = 35;
+    
     
     addBtn.addEventListener('click', () => {
 
@@ -109,7 +111,7 @@ const shop = (function (){
                             
         }
         if (customerChoicePepsi.checked) {
-           
+        
             let operation = sellItem( quantity, pepsiCount, pepsiPrice);
             console.log(operation);
             pepsiCount = operation.itemCount;
@@ -127,8 +129,6 @@ const shop = (function (){
 
         customer_fild.value = '';
     });
-    
-  
 
     function checkBank() {
         return total_fild.innerHTML = total ;
@@ -153,7 +153,6 @@ const shop = (function (){
         }
     }
 
-    
 }());
 
 
