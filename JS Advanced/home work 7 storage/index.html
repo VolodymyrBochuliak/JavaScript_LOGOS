@@ -30,8 +30,8 @@
             <div class="inputFildHolder">
                 <input required type="email" onfocus="this.value=''" name="email" placeholder="Email address"
                     class="inputFild" id="mail">
-                <div class="error_message">
-                    <p>Please provide a valid Email address</p>
+                <div class="error_message email_error">
+                    <p>This email already exists </p>
                 </div>
             </div>
             <div class="inputFildHolder">
@@ -43,7 +43,10 @@
             </div>
 
             <button class="actionBtn signUp_btn" disabled> Sign Up </button>
-            <span style="cursor: pointer; color:rgb(5, 131, 235);" id="signIn">Sign in now</span>
+            <div style=" display: flex; justify-content: space-between; ">
+                <span style="cursor: pointer; color:rgb(5, 131, 235);" id="signIn">Sign in now</span>
+                <span style="cursor: pointer; color:rgb(235, 5, 5);" onclick="clearStorage()">clear LS</span>
+            </div>
         </form>
     </div>
     <div class="signIn_block">
@@ -60,8 +63,8 @@
             <div class="inputFildHolder">
                 <input required type="password" onfocus="this.value=''" name="password" placeholder="Password"
                     class="inputFild" id="user_pass">
-                <div class="error_message">
-                    <p>Please provide a valid password</p>
+                <div class="error_message error_input ">
+                    <p>Password or email are incorrect</p>
                 </div>
             </div>
 

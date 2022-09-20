@@ -45,11 +45,11 @@ function validateSignUp() {
         FildValid(passRegEx, password)
         ){
 
-        console.log('access granted');
+        // console.log('access granted');
         return signUp.disabled = false;
     } else {
         
-        console.log('access denied');
+        // console.log('access denied');
         return signUp.disabled = true;
     }
 }
@@ -60,17 +60,17 @@ function validateSignIn() {
         FildValid(passRegEx, userPass)
         ){
 
-        console.log('access granted');
+        // console.log('access granted');
         return signIn.disabled = false;
     } else {
         
-        console.log('access denied');
+        // console.log('access denied');
         return signIn.disabled = true;
     }
 }
 
 function clearFilds (input) {
-    setTimeout(() => {input.value = '';}, 1000);
+    setTimeout(() => {input.value = '';}, 500);
 }
 ///////////////////////////////////////////////////////////////////
 
@@ -157,19 +157,34 @@ let userArr = [];
 signUp.addEventListener('click', () => {
     
     // userNum ++;
-    
-    const user = new Customer(firstName.value, lastName.value, email.value, password.value);
-    userArr.push(user);
 
-    // localStorage.setItem(`customer # ${userNum}`, JSON.stringify(user);
-    localStorage.setItem('customers', JSON.stringify(userArr));
+    const error_existing_email = document.querySelector('.email_error');
+
+    let predata = JSON.parse(localStorage.getItem('customers'));
+
+    predata.forEach(element => {
+
+        if (element.email == email.value) {
+            error_existing_email.style.cssText = 'visibility: visible;';
+            
+        } else {
     
-    clearFilds(firstName);
-    clearFilds(lastName);
-    clearFilds(email);
-    clearFilds(password);
-    
-    signUp.disabled = true;
+            const user = new Customer(firstName.value, lastName.value, email.value, password.value);
+            userArr.push(user);
+        
+            // localStorage.setItem(`customer # ${userNum}`, JSON.stringify(user);
+            localStorage.setItem('customers', JSON.stringify(userArr));
+            
+            error_existing_email.style.cssText = 'visibility: hiden;';
+
+            clearFilds(firstName);
+            clearFilds(lastName);
+            clearFilds(email);
+            clearFilds(password);
+            
+            signUp.disabled = true;
+        }
+    });
 });
 
 /////////////////////////////////////////////////////////////////////////////
@@ -177,35 +192,41 @@ signUp.addEventListener('click', () => {
 var userEmail = document.querySelector('#user_email');
 var userPass = document.querySelector('#user_pass');
 
-
-
 // userPass.addEventListener('blur', () => {
 //     validateSignIn();
-    
 // });
 
-let data = JSON.parse(localStorage.getItem('customers'));
+var data = JSON.parse(localStorage.getItem('customers'));
 // console.log(data);
 
 signIn.addEventListener('click', () => {
     
-    data.forEach(element => {
-    // data.find(element => {
-        
-        if (
-            element.email == userEmail.value &&
-            element.password == userPass.value 
-            ) {
-                
-            console.log(element.firstName);
-            greetingBanner.style.cssText = 'visibility: visible;';
-            // document.body.disabled = true;
+    const error_signIn_filds = document.querySelector('.error_input');
+    
+    data.forEach ( element => {
             
-            clearFilds(userEmail);
-            clearFilds(userPass);
+        // if ( element.email !== userEmail.value ||
+        //     element.password !== userPass.value ){
+                        
+        //         greetingBanner.style.cssText = 'visibility: visible;';
+                
+        //     } else if 
+        if( element.email == userEmail.value &&
+            element.password == userPass.value ){
+                
+                console.log(element.firstName);
+                greetingBanner.style.cssText = 'visibility: visible;';
+                document.body.disabled = true;
+                
+                error_signIn_filds.style.cssText = 'visibility: hiden;';
+
+                clearFilds(userEmail);
+                clearFilds(userPass);
+                    
         } else {
-            // console.log('enter wrong pass or email');
-            alert('enter wrong pass or email');
+            
+            error_signIn_filds.style.cssText = 'visibility: visible;';
+            console.log("shit, didn't work");
         }
     });
     
@@ -218,7 +239,9 @@ backToPageBtn.addEventListener('click', () => {
     
 });
 
-// localStorage.clear();
+function clearStorage () {
+    localStorage.removeItem('customers');
+}
 
 
 
