@@ -151,40 +151,35 @@ class Customer {
     }
 }
 
-// let userNum = 0;
 let userArr = [];
 
 signUp.addEventListener('click', () => {
     
-    // userNum ++;
-
     const error_existing_email = document.querySelector('.email_error');
 
-    let predata = JSON.parse(localStorage.getItem('customers'));
+    let customers = JSON.parse(localStorage.getItem('customers')) ?? [];
 
-    predata.forEach(element => {
+    for (let user of customers){
 
-        if (element.email == email.value) {
+        if (user.email == email.value) {
             error_existing_email.style.cssText = 'visibility: visible;';
-            
-        } else {
+            return;
+        } 
+    }
     
-            const user = new Customer(firstName.value, lastName.value, email.value, password.value);
-            userArr.push(user);
-        
-            // localStorage.setItem(`customer # ${userNum}`, JSON.stringify(user);
-            localStorage.setItem('customers', JSON.stringify(userArr));
-            
-            error_existing_email.style.cssText = 'visibility: hiden;';
+    const user = new Customer(firstName.value, lastName.value, email.value, password.value);
+    customers.push(user);
+    
+    localStorage.setItem('customers', JSON.stringify(customers));
+    
+    error_existing_email.style.cssText = 'visibility: hiden;';
 
-            clearFilds(firstName);
-            clearFilds(lastName);
-            clearFilds(email);
-            clearFilds(password);
-            
-            signUp.disabled = true;
-        }
-    });
+    clearFilds(firstName);
+    clearFilds(lastName);
+    clearFilds(email);
+    clearFilds(password);
+    
+    signUp.disabled = true;
 });
 
 /////////////////////////////////////////////////////////////////////////////
@@ -196,41 +191,29 @@ var userPass = document.querySelector('#user_pass');
 //     validateSignIn();
 // });
 
-var data = JSON.parse(localStorage.getItem('customers'));
 // console.log(data);
 
 signIn.addEventListener('click', () => {
     
+    const customers = JSON.parse(localStorage.getItem('customers'));
+
     const error_signIn_filds = document.querySelector('.error_input');
     
-    data.forEach ( element => {
+    for (let user of customers) {
+        if ( user.email == userEmail.value &&
+            user.password == userPass.value ){ 
+            greetingBanner.style.cssText = 'visibility: visible;';
+            document.body.disabled = true;
             
-        // if ( element.email !== userEmail.value ||
-        //     element.password !== userPass.value ){
-                        
-        //         greetingBanner.style.cssText = 'visibility: visible;';
-                
-        //     } else if 
-        if( element.email == userEmail.value &&
-            element.password == userPass.value ){
-                
-                console.log(element.firstName);
-                greetingBanner.style.cssText = 'visibility: visible;';
-                document.body.disabled = true;
-                
-                error_signIn_filds.style.cssText = 'visibility: hiden;';
+            error_signIn_filds.style.cssText = 'visibility: hiden;';
 
-                clearFilds(userEmail);
-                clearFilds(userPass);
-                    
-        } else {
-            
-            error_signIn_filds.style.cssText = 'visibility: visible;';
-            console.log("shit, didn't work");
+            clearFilds(userEmail);
+            clearFilds(userPass);
+            return;
         }
-    });
-    
-    // signIn.disabled = false;
+    }
+    error_signIn_filds.style.cssText = 'visibility: visible;';
+    console.log("shit, didn't work"); 
 });
 
 backToPageBtn.addEventListener('click', () => {
