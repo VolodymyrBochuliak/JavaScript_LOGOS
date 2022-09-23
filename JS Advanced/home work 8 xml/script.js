@@ -1,6 +1,4 @@
 
-    // const more_info = `https://www.omdbapi.com/?apikey=1a09f488&s=${Title}&plot=full`;
-
 async function getData() {
     
     const name = document.querySelector('#first_serch_fild').value;
@@ -47,7 +45,7 @@ function showMovies(obj) {
             </div>
             <div class="overview">
                 <h3>Overview :</h3>
-                ${Plot}
+                <p>${Plot}</p>
                 <br/> 
                 <button class="know_more" id="${imdbID}">More...</button
             </div>
