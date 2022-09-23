@@ -1,10 +1,12 @@
 
-    const more_info = `https://www.omdbapi.com/?apikey=1a09f488&s=${Title}&plot=full`;
+    // const more_info = `https://www.omdbapi.com/?apikey=1a09f488&s=${Title}&plot=full`;
 
 async function getData() {
     
     const name = document.querySelector('#first_serch_fild').value;
-    const url_for_serch = `https://www.omdbapi.com/?apikey=1a09f488&s=${name}`;
+    // const url_for_serch = `https://www.omdbapi.com/?apikey=1a09f488&s=${name}&plot=ful`;
+    const url_for_serch = `http://www.omdbapi.com/?apikey=1a09f488&s=${name}&plot=full`;
+    
     try {
        
         const response = await fetch(url_for_serch);
@@ -33,24 +35,23 @@ function showMovies(obj) {
 
    obj.forEach( movie => {
         
-        const {Poster, Title, Year, imdbID, overview, id} = movie;
+        const {Poster, Title, Year, imdbID, Plot} = movie;
         const movieEl = document.createElement('div');
         movieEl.classList.add('movie');
         movieEl.innerHTML = `
-             <img src="${Poster}" alt="${Title}">
-            <div class="movie-info">
-                <h3>${Title}</h3>
-                <span class="yers">Year of release: ${Year}</span> <br>
-                <span class="yers">IMDb ID: ${imdbID}</span>
+            <img src="${Poster}" alt="${Title}">
+            <div class="movie_info">
+                <h2>${Title}</h2>
+                <span class="year">Year of release: ${Year}</span> <br>
+                <span class="id">IMDb ID: ${imdbID}</span>
             </div>
             <div class="overview">
-                <h3>Overview</h3>
-                ${overview}
+                <h3>Overview :</h3>
+                ${Plot}
                 <br/> 
-                <button class="know_more" id="${id}">More...</button
+                <button class="know_more" id="${imdbID}">More...</button
             </div>
-        
-        `;
+            `;
         main.appendChild(movieEl);
     });
 }
