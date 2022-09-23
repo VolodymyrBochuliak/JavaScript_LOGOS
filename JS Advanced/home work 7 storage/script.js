@@ -115,7 +115,6 @@ form2.addEventListener('submit', handleForm);
 /////////////////////////////////////////////////////////////////
 
 const greetingBanner = document.querySelector('.greetings');
-const backToPageBtn = document.querySelector('.continue');
 
 const btnS_I = document.querySelector('#signIn');
 const btnS_U = document.querySelector('#signUp');
@@ -203,12 +202,15 @@ signIn.addEventListener('click', () => {
         if ( user.email == userEmail.value &&
             user.password == userPass.value ){ 
             greetingBanner.style.cssText = 'visibility: visible;';
-            document.body.disabled = true;
+
+            user_info (user.firstName, user.lastName, user.email);
             
+            document.body.disabled = true;
             error_signIn_filds.style.cssText = 'visibility: hiden;';
 
             clearFilds(userEmail);
             clearFilds(userPass);
+
             return;
         }
     }
@@ -216,16 +218,32 @@ signIn.addEventListener('click', () => {
     console.log("shit, didn't work"); 
 });
 
-backToPageBtn.addEventListener('click', () => {
-    document.body.disabled = false;
-    greetingBanner.style.cssText = 'visibility: hidden;';
-    
-});
 
 function clearStorage () {
     localStorage.removeItem('customers');
 }
 
+function user_info (FN, LN, EM) {
+    const greetings_inner = document.createElement ('div');
+    greetings_inner.classList.add('greetings_inner');
+    greetings_inner.innerHTML =`
+        <div class="user_img">
+        <img src="./assets/img/users-avatar-svgrepo-com.svg" alt="">
+        </div><div class="user_info"><h3>${FN} ${LN}</h3>
+        <h4>${EM}</h4></div>
+        <button class="continue">Continue...</button>
+        </div>
+    `;
+    greetingBanner.append(greetings_inner);
+
+    const backToPageBtn = document.querySelector('.continue');
+    backToPageBtn.addEventListener('click', () => {
+        document.body.disabled = false;
+        greetings_inner.remove();
+        greetingBanner.style.cssText = 'visibility: hidden;';
+                    
+    });
+}
 
 
 
