@@ -89,6 +89,7 @@ const shop = (function (){
 
             buyBtn.addEventListener('click', () => {
                 
+                quantity_list.innerText = '';
                 beerCount_fild.innerHTML = `${operation.itemCount} шт.`;
                 total_fild.innerHTML = `${operation.total} грн.`;
             });        
@@ -105,6 +106,8 @@ const shop = (function (){
             // quantity_list.innerText += `Вино: ${quantity} шт.`;
             
             buyBtn.addEventListener('click', () => {
+
+                quantity_list.innerText = '';
                 total_fild.innerHTML = `${operation.total} грн.`;
                 vineCount_fild.innerHTML = `${operation.itemCount} шт.`;
             });
@@ -121,6 +124,8 @@ const shop = (function (){
             quantity_list.append(pepsiItem);
             
             buyBtn.addEventListener('click', () => {
+
+                quantity_list.innerText = '';
                 total_fild.innerHTML = `${operation.total} грн.`;
                 pepsiCount_fild.innerHTML = `${operation.itemCount} шт.`;
             });
