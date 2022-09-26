@@ -1,1 +1,1 @@
-const ts = "hello";
+var ts = "hello";
