@@ -19,22 +19,24 @@ if (user_input % 2 === 0 ) {
 }
 
 //////////////////////////////////////////
-function maxArrValue (...args: Array<number>) : number | string {
+function maxArrValue (...args: Array<number>) : void {
     if (args.length < 1){ 
         alert ('Max of empty list'); 
     }
    let m: any = args[0];
-    args.forEach(number => {
+    args.forEach (number => {
         if (number > m) {
             m = number
         }
     });
-    return m;
+    console.log(`max value is: ${m}`);
 }
-console.log(maxArrValue(-8,5,30,8,1,10));
+
+maxArrValue(-8,5,30,8,1,10);
+// console.log(maxArrValue(-8,5,30,8,1,10));
 //////////////////////////////////////////
 
-function getSqrt ( number: number | string) :any { 
+function getSqrt ( number: number | string) :void { 
    
     if (number && number > 0) {
 

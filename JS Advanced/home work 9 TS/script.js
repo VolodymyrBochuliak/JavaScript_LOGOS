@@ -24,9 +24,9 @@ function maxArrValue(...args) {
             m = number;
         }
     });
-    return m;
+    console.log(`max value is: ${m}`);
 }
-console.log(maxArrValue(-8, 5, 30, 8, 1, 10));
+maxArrValue(-8, 5, 30, 8, 1, 10);
 function getSqrt(number) {
     if (number && number > 0) {
         let numSgrt = Math.sqrt(number);
