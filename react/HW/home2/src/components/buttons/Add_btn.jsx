@@ -12,7 +12,7 @@ const Add = () => {
 
     return (
         <div>
-           <button className='add' onClick={updateWordList}>Add</button>
+           <button className='add_btn' onClick={updateWordList}>Add</button>
         </div>
     )
 }

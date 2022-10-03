@@ -1,7 +1,35 @@
 .inner_bad_words_input {
     display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 98%;
+    // margin-left: 10px;
+    margin-bottom: 10px;
 
-    .add {
-        
+    input {
+        width: 60%;
+        height: 30px;
+        padding-left: 10px;
+        border: 1px solid rgb(102, 102, 102);
+        border-radius: 5px;
+    }
+
+    .add_btn {
+        height: 30px;
+        width: 50px;
+        border: none;
+        background-color: rgb(241, 217, 0);
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .reset_btn {
+        height: 30px;
+        width: 70px;
+        border: none;
+        background-color: red;
+        color: white;
+        cursor: pointer;
+        border-radius: 5px;
+    
     }
 }

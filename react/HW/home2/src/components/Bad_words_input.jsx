@@ -20,7 +20,7 @@ class BadWordsInput extends Component {
     render() {
         return (
             <div className="inner_bad_words_input">
-                <input 
+                <input
                     type="text"
                     placeholder="word here..."
                     onChange={this.AddBadWord} >
