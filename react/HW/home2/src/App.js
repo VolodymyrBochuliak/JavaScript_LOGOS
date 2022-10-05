@@ -1,23 +1,17 @@
-import BadWordsInput from './components/Bad_words_input';
-import BadWordsOutput from './components/Bad_words_output';
+
+import Header from './components_v2/Header';
+import Main from './components_v2/Main';
+import "./components_v2/Header/style.scss"
 import './App.scss';
 
-function App() {
-  return (
-    <div className="body_container">
-      <header className="app_header">
-        <h3> React list of prohibited words</h3>
-      </header>
-      <div className="main_container">
-        <div className="main_inner">
-          < BadWordsOutput />
-          < BadWordsInput />
+const App = () => {
 
-                
-        </div>
-      </div>
-    </div>
-  );
+  return (
+    <body>
+      < Header />
+      < Main />
+    </body>
+  )
 }
 
 export default App;

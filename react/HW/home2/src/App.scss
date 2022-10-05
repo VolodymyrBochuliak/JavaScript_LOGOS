@@ -2,7 +2,7 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
 
     .app_header {
         display: flex;
@@ -17,20 +17,5 @@ body {
                 letter-spacing: 1px;
                 font-weight: 700;
             }
-    }
-
-    .main_container {
-        width: 450px;
-        height: 310px;
-        background-color: rgb(250, 240, 227);
-        margin: 0 auto;
-
-        .main_inner {
-            margin: 0 auto;
-            width: 98%;
-            margin-left: 10px;
-            margin-bottom: 10px;
-        }
-    
     }
 }
