@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>hw 11</title>
+</head>
+<body>
+
+    <h1 style="margin-bottom: 20px;">Please sign up</h1>
+    <form action="" id="form" >
+        <div class="inputFildHolder">
+            <input required type="text" onfocus="this.value=''" name="name" placeholder="First name" class="inputFild" id="firstN">
+            <div class="error_message">
+                <p>Please provide a valid First name</p>
+            </div>
+        </div>
+        <div class="inputFildHolder">
+            <input required type="text" onfocus="this.value=''" name="name" placeholder="Last name" class="inputFild" id="lastN">
+            <div class="error_message">
+                <p>Please provide a valid Last name</p>
+            </div>
+        </div>
+        <div class="inputFildHolder">
+            <input required type="email" onfocus="this.value=''" name="email" placeholder="Email address" class="inputFild" id="mail">
+            <div class="error_message">
+                <p>Please provide a valid Email address</p>
+            </div>
+        </div>
+        <div class="inputFildHolder">
+            <input required type="password" onfocus="this.value=''" name="password" placeholder="Password" class="inputFild" id="pass">
+            <div class="error_message">
+                <p>Please provide a valid password</p>
+            </div>
+        </div>
+        <div class="submit">
+            <input required type="checkbox" name="terms" id="checkTerms"> 
+            <span>I agree with Privacy Policy</span>
+        </div>
+        <button class="actionBtn" disabled> Sign Up </button> 
+    </form>
+
+    <div class="greetings">
+        <button class="continue">Continue...</button>
+    </div>
+
+    
+    <script src="./script.js"></script>
+</body>
+</html>

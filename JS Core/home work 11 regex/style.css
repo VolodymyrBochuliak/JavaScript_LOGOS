@@ -1,0 +1,125 @@
+* {
+    padding: 0;
+    margin: 0;;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 239, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#form {
+    width: 400px;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+.inputFildHolder {
+    position: relative;
+    width: 100%;
+    /* background-color: #fff; */
+    /* border: 3px solid green; */
+    border-radius: 5px;
+
+}
+
+.inputFildHolder::before {
+    content: "";
+    position: absolute;
+    display: none;
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 3px;
+    left: 375px;
+    top: 15px;
+}
+.inputFildHolder::after {
+    content: "";
+    display: none;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 3px;
+    left: 375px;
+    top: 15px;
+    
+}
+.inputFild {
+    border: 2px solid rgb(179, 174, 174);
+    border-radius: 3px;
+    width: 96.7%;
+    font-size: 16px;
+    height: 40px;
+    padding-left: 10px;
+    /* border: 3px solid green; */
+
+}
+.error_message {
+    width: 60%;
+    height: 30px;
+    font-size: 14px;
+    background-color: red;
+    color: white;
+    display: flex;
+    /* transition: 0.5s linear; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    visibility: hidden;
+    
+}
+.actionBtn {
+    border: 2px solid rgb(179, 174, 174);
+    border-radius: 3px;
+    background-color: rgb(61, 154, 236);
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+.actionBtn:disabled {
+    background-color: rgb(45, 91, 131);
+
+}
+
+.submit {
+    font-size: 16px;
+}
+.greetings {
+    position: absolute;
+    background-image: url(https://d1ctrvvfkbyl4b.cloudfront.net/blog/yo@2x.png);
+    background-position: center;
+    background-size: contain;
+    width: 700px;
+    height: 400px;
+    border-radius: 10px;
+    visibility: hidden;
+}
+    .continue {
+        font-size: 36px;
+        font-weight: 900;
+        color: white;
+        background-color: transparent;
+        border: 3px solid white;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 58%;
+        margin-top: 45%;
+        cursor: pointer;
+        width: 250px;
+       
+    }
+    .continue:hover {
+        color: rgb(62, 121, 231);
+        background-color: white;
+        letter-spacing: 4px;
+        
+    }
