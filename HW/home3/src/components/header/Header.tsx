@@ -15,8 +15,8 @@ const Header = () => {
             <nav>
                 <ul className='menu'>
                     <li><Link className={useExactMatch('/') ? 'active' : ''} to={'/'}>Home</Link></li>
-                    <li><Link className={useExactMatch('/users') ? 'active' : ''} to={'/users'}>users</Link></li>
-                    <li><Link className={useExactMatch('/tickets') ? 'active' : ''} to={'/tickets'}>tickets</Link></li>
+                    <li><Link className={useExactMatch('/users') ? 'active' : ''} to={'/users'}>Users</Link></li>
+                    <li><Link className={useExactMatch('/tickets') ? 'active' : ''} to={'/tickets'}>Tickets</Link></li>
                 </ul>
             </nav>
         </header>

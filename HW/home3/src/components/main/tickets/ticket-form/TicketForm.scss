@@ -20,6 +20,8 @@ form {
         height: 35px;
         padding-left: 10px;
         margin: 15px 0;
+        font-family: Arial, Helvetica, sans-serif;
+
         
         &:focus {
             outline: rgb(66, 151, 44);
@@ -31,8 +33,9 @@ form {
         border-radius: 5px;
         border: 2px solid rgb(179, 174, 174);
         width: 94%;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 400;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     footer {

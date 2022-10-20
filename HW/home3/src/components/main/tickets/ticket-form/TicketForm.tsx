@@ -17,7 +17,7 @@ const TicketForm = (props: IProps) => {
         handleCloseModal
     } = props;
 
-    const [title, setTitle] = useState <string>('');
+    const [title, setTitle] = useState('');
     const [date, setDate] = useState(0);
     const [type, setType] = useState ('');
     const [price, setPrice] = useState(0);
@@ -29,9 +29,9 @@ const TicketForm = (props: IProps) => {
         setTitle(event.target.value);
     }
 
-    const handleDateChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<number> } }): void => {
+    const handleDateChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
         event.preventDefault();
-        setDate(event.target.value);
+        setDate(+event.target.value);
     }
 
     const TicketTypeArr = [
@@ -40,10 +40,10 @@ const TicketForm = (props: IProps) => {
         { label: 'Ticket with transfers', value: 'Ticket with transfers' },
     ];
 
-    // const handleTypeChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string>; }; }): void => {
-    //     event.preventDefault();
-    //     setType(event.target.value as TicketType);
-    // }
+    const handleTypeChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string>; }; }): void => {
+        event.preventDefault();
+        setType(event.target.value);
+    }
 
     const handlePriceChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
         event.preventDefault();
@@ -52,14 +52,14 @@ const TicketForm = (props: IProps) => {
     }
 
     const TicketAvailability = [
-        {label: "Sold", value: true},
-        {label: "Available", value: false}
+        {label: "Sold", value: "Sold"},
+        {label: "Available", value: "Available"}
     ];
 
-    // const handleSoldChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
-    //     event.preventDefault();
-    //     setSold(event.target.value);
-    // }
+    const handleSoldChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
+        event.preventDefault();
+        setSold(event.target.value);
+    }
 
     const createTicket = (event: { preventDefault: () => void; }): void => {
         event.preventDefault();

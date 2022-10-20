@@ -2,8 +2,8 @@
 import Users from "./users/Users";
 import { NotFoundPage } from "./no-found-page/NotFoundPage"; 
 import { Routes, Route } from 'react-router-dom';
-import '../main/main.scss'
 import Tickets from "./tickets/Tickets";
+import '../main/main.scss'
 
 
 const Main = () => {

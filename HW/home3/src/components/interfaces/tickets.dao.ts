@@ -3,9 +3,10 @@
 export interface Ticket {
     title: string;
     date: number;
-    type: TicketType;
+    type: string;
+    // type: TicketType;
     price: number;
-    sold: boolean;
+    sold: string;
 }
 
 export enum TicketType {
