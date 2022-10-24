@@ -3,6 +3,7 @@ import Users from "./users/Users";
 import { NotFoundPage } from "./no-found-page/NotFoundPage"; 
 import { Routes, Route } from 'react-router-dom';
 import Tickets from "./tickets/Tickets";
+import Home from "./home/Home";
 import '../main/main.scss'
 
 
@@ -10,7 +11,7 @@ const Main = () => {
     return (
         <div className="main-container">
             <Routes>
-                <Route path="/"></Route>
+                <Route path="/" element={<Home />}></Route>
                 <Route path="/users" element={<Users />}></Route>
                 <Route path="/tickets" element={<Tickets />}></Route>
                 <Route path="*" element={<NotFoundPage />}></Route>

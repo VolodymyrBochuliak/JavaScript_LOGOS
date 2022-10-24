@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Ticket, TicketType } from '../../../interfaces/tickets.dao';
+import { Ticket } from '../../../interfaces/tickets.dao';
 import InputField from '../../../shared-component/InputField';
 import ActionButton from '../../../shared-component/ActionButton';
 import './TicketForm.scss'
@@ -18,7 +18,7 @@ const TicketForm = (props: IProps) => {
     } = props;
 
     const [title, setTitle] = useState('');
-    const [date, setDate] = useState(0);
+    const [date, setDate] = useState <number>(0);
     const [type, setType] = useState ('');
     const [price, setPrice] = useState(0);
     const [sold, setSold] = useState('');
@@ -29,13 +29,15 @@ const TicketForm = (props: IProps) => {
         setTitle(event.target.value);
     }
 
-    const handleDateChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
+    const handleDateChange = (event: { preventDefault: () => void; target: {  value: React.SetStateAction<string> }; }): void => {
         event.preventDefault();
+       
+        setDate(event.target.value as any);
 
-        const value = +event.target.value;
-        if (!isNaN(value)) {
-            setDate(value);
-        }
+        // const value = +event.target.value;
+        // if (!isNaN(value)) {
+        //     setDate(value);
+        // }
     }
 
     const TicketTypes: Option[] = [
@@ -98,7 +100,8 @@ const TicketForm = (props: IProps) => {
                     className='select-field' 
                     options={TicketTypes}
                     selectedOption={type}
-                    setSelectedOption={handleTypeChange}              
+                    setSelectedOption={handleTypeChange} 
+                    placeholder='Ticket type'             
                 />
                 
                 <InputField 
@@ -113,6 +116,7 @@ const TicketForm = (props: IProps) => {
                     options={TicketAvailability}
                     selectedOption={sold}
                     setSelectedOption={handleSoldChange}  
+                    placeholder='Availability'
                />
 
             <footer className='flex'>

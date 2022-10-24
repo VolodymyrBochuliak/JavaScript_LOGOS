@@ -1,16 +1,13 @@
 
 import React, { useState } from 'react';
-import Select, { ActionMeta, Options, SingleValue } from 'react-select';
+import Select from 'react-select';
 
 interface IProps {
-    className: string;
-    // onChange: (event: any) => void;
-    options: any;
-    // defaultValue: object;
-    placeholder?: string;
-    selectedOption: string;
-    setSelectedOption: (value: Option) => void;
-
+  className: string;
+  options: any;
+  placeholder?: string;
+  selectedOption: string;
+  setSelectedOption: (value: Option) => void;
 }
 
 export type Option = {
@@ -21,10 +18,8 @@ export type Option = {
 const CustomSelect = (props: IProps) => {
   const{
     className,
-    // onChange,
     options = [],
-    // defaultValue,
-    placeholder ='',
+    placeholder = '',
     selectedOption, 
     setSelectedOption
   } = props;
@@ -39,7 +34,8 @@ const CustomSelect = (props: IProps) => {
         className={className}
         onChange={onChange}
         options={options}
-        defaultValue={selectedOption} 
+        defaultValue={selectedOption}
+        placeholder={placeholder} 
       />
     </div>
   );
