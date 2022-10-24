@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { Ticket, TicketType } from '../../../interfaces/tickets.dao';
 import InputField from '../../../shared-component/InputField';
-import Select from 'react-select';
 import ActionButton from '../../../shared-component/ActionButton';
 import './TicketForm.scss'
+import CustomSelect, { Option } from '../../../shared-component/SelectFild';
 
 interface IProps {
     updateTicketList: (ticket: Ticket) => void;
@@ -31,18 +31,21 @@ const TicketForm = (props: IProps) => {
 
     const handleDateChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
         event.preventDefault();
-        setDate(+event.target.value);
+
+        const value = +event.target.value;
+        if (!isNaN(value)) {
+            setDate(value);
+        }
     }
 
-    const TicketTypeArr = [
+    const TicketTypes: Option[] = [
         { label: 'One way ticket', value: 'One way ticket' },
         { label: 'Two way ticket', value: 'Two way ticket' },
         { label: 'Ticket with transfers', value: 'Ticket with transfers' },
     ];
-
-    const handleTypeChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string>; }; }): void => {
-        event.preventDefault();
-        setType(event.target.value);
+    
+    const handleTypeChange = (option: Option): void => {
+        setType(option.value);
     }
 
     const handlePriceChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
@@ -56,9 +59,8 @@ const TicketForm = (props: IProps) => {
         {label: "Available", value: "Available"}
     ];
 
-    const handleSoldChange = (event: { preventDefault: () => void; target: { value: React.SetStateAction<string> } }): void => {
-        event.preventDefault();
-        setSold(event.target.value);
+    const handleSoldChange = (option: Option): void => {
+        setSold(option.value);
     }
 
     const createTicket = (event: { preventDefault: () => void; }): void => {
@@ -92,8 +94,13 @@ const TicketForm = (props: IProps) => {
                     placeholder='Date' 
                 />
 
-                <Select options={TicketTypeArr} className='select-field' />
-
+                <CustomSelect 
+                    className='select-field' 
+                    options={TicketTypes}
+                    selectedOption={type}
+                    setSelectedOption={handleTypeChange}              
+                />
+                
                 <InputField 
                     className='input-field' 
                     onChange={handlePriceChange} 
@@ -101,7 +108,12 @@ const TicketForm = (props: IProps) => {
                     placeholder='Price' 
                 />
 
-                <Select options={TicketAvailability} className='select-field' />
+                <CustomSelect 
+                    className='select-field' 
+                    options={TicketAvailability}
+                    selectedOption={sold}
+                    setSelectedOption={handleSoldChange}  
+               />
 
             <footer className='flex'>
                 <ActionButton

@@ -13,15 +13,17 @@ const TicketsList = (props: IProps) => {
         return (
             <table>
                 <thead>
+                    <tr>
                     <th>Title</th>
                     <th>Data</th>
                     <th>Type</th>
                     <th>Price</th>
                     <th>Status</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    {tickets.map(ticket => {
-                        return <TicketListItem ticket={ticket} />
+                    {tickets.map((ticket, index) => {
+                        return <TicketListItem key={index} ticket={ticket} />
                     })}
                 </tbody>
             </table>
