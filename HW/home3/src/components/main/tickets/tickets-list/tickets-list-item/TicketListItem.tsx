@@ -1,4 +1,5 @@
 import { Ticket, TicketType} from '../../../../interfaces/tickets.dao'
+import "../../../List.scss"
 
 interface IProps {
     ticket: Ticket
