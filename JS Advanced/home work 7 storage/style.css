@@ -1,0 +1,161 @@
+* {
+    padding: 0;
+    margin: 0;;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(255, 239, 239);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#form {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+#form_in {
+    width: 400px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;   
+}
+.inputFildHolder {
+    position: relative;
+    width: 100%;
+    /* background-color: #fff; */
+    /* border: 3px solid green; */
+    border-radius: 5px;
+
+}
+
+.inputFildHolder::before {
+    content: "";
+    position: absolute;
+    display: none;
+    height: 15px;
+    width: 15px;
+    background-color: red;
+    border-radius: 3px;
+    left: 375px;
+    top: 15px;
+}
+.inputFildHolder::after {
+    content: "";
+    display: none;
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background-color: green;
+    border-radius: 3px;
+    left: 375px;
+    top: 15px;
+    
+}
+.inputFild {
+    border: 2px solid rgb(179, 174, 174);
+    border-radius: 3px;
+    width: 96.7%;
+    font-size: 16px;
+    height: 40px;
+    padding-left: 10px;
+    /* border: 3px solid green; */
+
+}
+.error_message {
+    width: 60%;
+    height: 30px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: rgba(255, 0, 0, 0.699);
+    color: white;
+    display: flex;
+    /* transition: 0.5s linear; */
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    visibility: hidden;
+    
+}
+.actionBtn {
+    border: 2px solid rgb(179, 174, 174);
+    border-radius: 3px;
+    background-color: rgb(61, 154, 236);
+    color: white;
+    font-size: 16px;
+    height: 40px;
+}
+.signIn_btn {
+    background-color: rgb(102, 163, 4);
+    cursor: pointer;
+}
+
+.greetings {
+    position: absolute;
+    /* background-image: url(https://d1ctrvvfkbyl4b.cloudfront.net/blog/yo@2x.png);
+    background-position: center;
+    background-size: contain; */
+    background-color: rgb(194, 193, 193);
+    width: 450px;
+    height: 400px;
+    border-radius: 10px;
+    visibility: hidden;
+}
+    .greetings_inner {
+       
+    }
+    .user_img img {
+        height: 60%;
+        width: 60%;
+    }
+    .user_img  {
+       display: flex;
+       justify-content: center;
+    }
+    h3, h4 {
+        margin: 0;
+        padding: 0;
+    }
+    .user_info {
+        height: 65px; 
+        margin-bottom: 15px;
+        font-size: 24px;
+        margin-left: 135px;
+        /* display: flex;
+        flex-direction: column;
+        justify-content: center; */
+    }
+    .continue {
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        background-color: transparent;
+        border: 3px solid white;
+        border-radius: 10px;
+        padding: 5px;
+        margin-left: 33%;
+        /* margin-top: 47%; */
+        cursor: pointer;
+        width: 150px;
+       
+    }
+    .continue:hover {
+        color: rgb(62, 121, 231);
+        background-color: white;
+               
+    }
+
+    .signUp_block {
+        /* display: none; */
+    }
+    .signIn_block {
+        display: none;
+    }
