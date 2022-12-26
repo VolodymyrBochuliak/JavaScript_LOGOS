@@ -1,9 +1,4 @@
-HW/home1/node_modules
-HW/home1/package-lock.json
-HW/home3/node_modules
-HW/home3/package-lock.json
-HW/home4/node_modules
-HW/home4/package-lock.json
-HW/home5/node_modules
-HW/home5/package-lock.json
-/lessons
+=======
+/JS Basics/LESSONS
+/JS Core/LESSONS
+/JS Advanced/LESSONS

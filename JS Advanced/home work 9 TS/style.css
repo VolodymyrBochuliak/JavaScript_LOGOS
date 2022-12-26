@@ -1,0 +1,78 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+section {
+    width: 40vw;
+    height: 310px;
+    background-color: rgb(250, 240, 227);
+    margin: 0 auto;
+}
+.title {
+    margin-left: 10px;
+}
+.rounding {
+    border-radius: 5px;
+}
+.inner_head {
+    display: flex;
+}
+.inner_controls {
+    margin: 0 auto;
+    width: 98%;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+#user_input {
+    width: 60%;
+    height: 30px;
+    padding-left: 10px;
+    border: 1px solid rgb(102, 102, 102);
+}
+.add_btn {
+    height: 30px;
+    width: 18%;
+    border: none;
+    background-color: rgb(241, 217, 0);
+    cursor: pointer;
+
+}
+.reset_btn {
+    height: 30px;
+    width: 17%;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+
+}
+.cenzor_btn {
+    height: 30px;
+    width: 96%;
+    border: none;
+    background-color: rgb(12, 160, 62);
+    color: white;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+#user_input_area {
+    width: 96%;
+    margin-left: 10px;
+    border: 1px solid rgb(102, 102, 102);
+    margin-bottom: 10px;
+}
+.bad_words {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* background-color: #fff; */
+    margin: 5px;
+    color: red;
+    font-size: 18px;
+}
+.bad_words span {
+    margin-left: 5px;
+}
