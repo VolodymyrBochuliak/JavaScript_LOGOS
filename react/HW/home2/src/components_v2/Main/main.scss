@@ -1,0 +1,93 @@
+.main {
+    display: flex;
+    justify-content: center;
+    // width: ;
+
+    .main_container {
+        width: 450px;
+        height: 310px;
+        background-color: rgb(250, 240, 227);
+        // margin: 0 auto;
+        margin-left: 10px;
+        margin-bottom: 10px;
+
+        .bad_words_output {
+            display: flex;
+            width: 98%;
+            
+            .words_output {
+                display: flex;
+            
+                .title {
+                    font-size: 20px;
+                    
+                    h4 {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+        .bad_words_input {
+            display: flex;
+            justify-content: space-around;
+            margin: 0 auto;
+            width: 98%;
+            // margin-left: 10px;
+            margin-bottom: 10px;
+
+            input {
+                width: 60%;
+                height: 30px;
+                padding-left: 10px;
+                border: 1px solid rgb(102, 102, 102);
+                border-radius: 5px;
+            }
+
+            .add_btn {
+                height: 30px;
+                width: 50px;
+                border: none;
+                background-color: rgb(241, 217, 0);
+                cursor: pointer;
+                border-radius: 5px;
+            }
+            .reset_btn {
+                height: 30px;
+                width: 70px;
+                border: none;
+                background-color: red;
+                color: white;
+                cursor: pointer;
+                border-radius: 5px;
+            
+            }
+        }
+
+        .text_input_area {
+            width: 92.5%;
+            height: 170px;
+            margin-left: 10px;
+            border: 1px solid rgb(102, 102, 102);
+            margin-bottom: 10px;
+            border-radius: 5px;
+            padding-left: 10px;
+            resize: none;
+        }
+        
+        .censor_btn {
+            height: 30px;
+            width: 95%;
+            border: none;
+            background-color: rgb(6, 146, 240);
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left:10px;
+        }
+        
+
+    }
+}
