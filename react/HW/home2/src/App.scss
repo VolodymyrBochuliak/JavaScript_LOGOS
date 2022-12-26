@@ -1,0 +1,21 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .app_header {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid black;
+        position: fixed;
+        top: 10px;
+        width: 100%;
+
+            h3 {
+                font-size: 28px;
+                letter-spacing: 1px;
+                font-weight: 700;
+            }
+    }
+}

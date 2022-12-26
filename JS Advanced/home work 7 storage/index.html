@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>home work 7</title>
+</head>
+
+<body>
+    <div class="signUp_block">
+        <h1 style="margin-bottom: 20px;">Please sign up</h1>
+        <form action="" id="form">
+            <div class="inputFildHolder">
+                <input required type="text" onfocus="this.value=''" name="name" placeholder="First name"
+                    class="inputFild" id="firstN">
+                <div class="error_message">
+                    <p>Please provide a valid First name</p>
+                </div>
+            </div>
+            <div class="inputFildHolder">
+                <input required type="text" onfocus="this.value=''" name="name" placeholder="Last name"
+                    class="inputFild" id="lastN">
+                <div class="error_message">
+                    <p>Please provide a valid Last name</p>
+                </div>
+            </div>
+            <div class="inputFildHolder">
+                <input required type="email" onfocus="this.value=''" name="email" placeholder="Email address"
+                    class="inputFild" id="mail">
+                <div class="error_message email_error">
+                    <p>This email already exists </p>
+                </div>
+            </div>
+            <div class="inputFildHolder">
+                <input required type="password" onfocus="this.value=''" name="password" placeholder="Password"
+                    class="inputFild" id="pass">
+                <div class="error_message">
+                    <p>Please provide a valid password</p>
+                </div>
+            </div>
+
+            <button class="actionBtn signUp_btn" disabled> Sign Up </button>
+            <div style=" display: flex; justify-content: space-between; ">
+                <span style="cursor: pointer; color:rgb(5, 131, 235);" id="signIn">Sign in now</span>
+                <span style="cursor: pointer; color:rgb(235, 5, 5);" onclick="clearStorage()">clear LS</span>
+            </div>
+        </form>
+    </div>
+    <div class="signIn_block">
+        <h1 style="margin-bottom: 20px;">Sign in</h1>
+        <form action="" id="form_in">
+            
+            <div class="inputFildHolder">
+                <input required type="email" onfocus="this.value=''" name="email" placeholder="Email address"
+                    class="inputFild" id="user_email">
+                <div class="error_message">
+                    <p>Please provide a valid Email address</p>
+                </div>
+            </div>
+            <div class="inputFildHolder">
+                <input required type="password" onfocus="this.value=''" name="password" placeholder="Password"
+                    class="inputFild" id="user_pass">
+                <div class="error_message error_input ">
+                    <p>Password or email are incorrect</p>
+                </div>
+            </div>
+
+            <button class="actionBtn signIn_btn" disabled > Sign In </button>
+            <span style="cursor: pointer; color:rgb(102, 163, 4);" id="signUp">Sign Up</span>
+        </form>
+
+    </div>
+
+    <div class="greetings">
+        <!-- <div class="user_img">
+            <img src="./assets/img/users-avatar-svgrepo-com.svg" alt="">
+        </div>
+        <div class="user_info">
+
+        </div> -->
+        <!-- <button class="continue">Continue...</button>
+    </div> -->
+
+    <script src="script.js"></script>
+</body>
+
+</html>
