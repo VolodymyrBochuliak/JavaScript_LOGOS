@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>text editor - test2</title>
+</head>
+<body>
+<div class="transparentCover">
+    <header>
+        <div class="header_main_btn">
+            <div class="header_main_edit container">
+                <button class="edit" disabled >
+                    <img src="./assets/img/text-edit-style-svgrepo-com.svg" alt="">
+                </button>
+
+            </div>
+            <div class="header_main_font-style container">
+                <button class="bold">
+                    <img src="./assets/img/text-bold-svgrepo-com.svg" alt="">
+                </button>
+                <button class="italic">
+                    <img src="./assets/img/text-italic-svgrepo-com.svg" alt="">
+                </button>
+                <button class="underline">
+                    <img src="./assets/img/text-underline-svgrepo-com.svg" alt="">
+                </button>
+                <button class="linecross">
+                    <img src="./assets/img/text-strikethrough-svgrepo-com.svg" alt="">
+                </button>
+            </div>
+            <div class="header_main_font-aligne container">
+                <button class="left">
+                    <img src="./assets/img/text-align-left-svgrepo-com.svg" alt="">
+                </button>
+                <button class="center">
+                    <img src="./assets/img/text-align-center-svgrepo-com.svg" alt="">
+                </button>
+                <button class="right">
+                    <img src="./assets/img/text-align-right-svgrepo-com.svg" alt="">
+                </button>
+            </div>
+            <div class="header_main_decoration container">
+                <button class="fontStyle">
+                    <img src="./assets/img/text-change-case-svgrepo-com.svg" alt="">
+                </button>
+                <div class="drop_style">
+                    <select class="selectStyle">
+                        <option class="styleOption" value="Arial">Arial</option>
+                        <option class="styleOption" value="Roboto">Roboto</option>
+                        <option class="styleOption" value="Franklin Gothic Medium">Franklin Gothic Medium</option>
+                        <option class="styleOption" value="Georgia">Georgia</option>
+                        <option class="styleOption" value="Impact">Impact</option>
+                        <option class="styleOption" value="Lucida Sans">Lucida Sans</option>
+                        <option class="styleOption" value="Times New Roma">Times New Roman</option>
+                    </select>
+                </div>
+                <button class="fontSize">
+                    <img src="./assets/img/text-font-svgrepo-com.svg" alt="">
+                </button>
+                <div class="drop_size">
+                    <select class="selectSize">
+                        <option class="optionFS" value="12px">12px</option>
+                        <option class="optionFS" value="14px">14px</option>
+                        <option class="optionFS" value="16px">16px</option>
+                        <option class="optionFS" value="16px">16px</option>
+                        <option class="optionFS" value="20px">20px</option>
+                        <option class="optionFS" value="22px">22px</option>
+                        <option class="optionFS" value="26px">26px</option>
+                        <option class="optionFS" value="30px">30px</option>
+                        <option class="optionFS" value="32px">32px</option>
+                    </select>
+                </div>
+                <button class="fontColor">
+                    <img src="./assets/img/text-color-svgrepo-com.svg" alt="">
+                </button>
+                <div class="selectFontColor">
+                    <div class="font_color">
+                        <div class="color" data-color="orange"></div>
+                        <div class="color" data-color="red"></div>
+                        <div class="color" data-color="black"></div>
+                        <div class="color" data-color="fuchsia"></div>
+                        <div class="color" data-color="green"></div>
+                        <div class="color" data-color="lime"></div>
+                        <div class="color" data-color="yellow"></div>
+                        <div class="color" data-color="white"></div>
+                        <div class="color" data-color="blue"></div>
+                        <div class="color" data-color="aqua"></div>
+                    </div>
+                </div>
+                <button class="background">
+                    <img src="./assets/img/wallpaper-svgrepo-com.svg" alt="">
+                </button>
+                <div class="selectBG">
+                    <div class="selectBg_head" style="padding: 10px; display:flex; justify-content: space-between;">
+                        <h2>Choose background color or image</h2>
+                        <img id="closeBG" style="cursor: pointer; width: 15px; height: 15px;" src="./assets/img/dismiss-svgrepo-com.svg" alt="">
+                    </div>
+                    <div class="selectBg_inner">
+                        <input type="radio" id="colorTab" name="BGTabs" checked="checked">
+                        <label for="colorTab">Colors</label>
+                        <div class="tabContent BG_color_container" id="colorsBg">
+                            <div class="colors_container">
+                                <div class="colorBg" data-color="maroon"></div>
+                                <div class="colorBg" data-color="red"></div>
+                                <div class="colorBg" data-color="purple"></div>
+                                <div class="colorBg" data-color="fuchsia"></div>
+                                <div class="colorBg" data-color="green"></div>
+                                <div class="colorBg" data-color="lime"></div>
+                                <div class="colorBg" data-color="yellow"></div>
+                                <div class="colorBg" data-color="white"></div>
+                                <div class="colorBg" data-color="blue"></div>
+                                <div class="colorBg" data-color="aqua"></div>
+                                <div class="colorBg" data-color="maroon"></div>
+                                <div class="colorBg" data-color="red"></div>
+                                <div class="colorBg" data-color="purple"></div>
+                                <div class="colorBg" data-color="fuchsia"></div>
+                                <div class="colorBg" data-color="green"></div>
+                                <div class="colorBg" data-color="lime"></div>
+                                <div class="colorBg" data-color="yellow"></div>
+                                <div class="colorBg" data-color="navy"></div>
+                                <div class="colorBg" data-color="blue"></div>
+                                <div class="colorBg" data-color="aqua"></div>
+                                <div class="colorBg" data-color="black"></div>
+                            </div>
+                        </div>
+                        <input type="radio" id="imageTab" name="BGTabs" >
+                        <label for="imageTab">Images</label>
+                        <div class="tabContent BG_image_container" id="imagesBg">
+                            <div class="imagesContainer">
+                                <img class="image"
+                                    src="https://maserati.scene7.com/is/image/maserati/maserati/international/Models/my22/grecale/my22/modena/169/Maserati_Grecale_Modena_FULL_FRONT.jpg?$1920x2000$&fit=constrain"alt="">
+                                <img class="image"
+                                    src="https://maserati.scene7.com/is/image/maserati/maserati/regional/us/models/my22/levante/22_LV_Trofeo_PS_T1_HomePage_1920x1080.jpg?$1920x2000$&fit=constrain"alt="">
+                                <img class="image"
+                                    src="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-cadillac-ct6-v-5-1564989008.jpg"alt="">
+                                <img class="image"
+                                    src="https://cars.usnews.com/images/article/202012/128775/1_2021_bugatti_chiron_super_sport.jpg"alt="">
+                                <img  class="image"
+                                    src="https://www.bugatti.com/fileadmin/_processed_/9/5/csm_HEADER_22de7ed3a8.jpg"alt="">
+                                <img class="image"
+                                    src="https://cdn.motor1.com/images/mgl/Y1ywy/s1/bugatti-chiron-front-corner.jpg"alt="">
+                                <img class="image"
+                                    src="https://allabouthorsepower.com/wp-content/uploads/2018/01/Mercedez-Benz.jpg"alt="">
+                                <img class="image"
+                                    src="https://i.ytimg.com/vi/TZL2fPPoQ7M/maxresdefault.jpg"alt="">
+                            </div>
+                        </div>
+                        <input type="radio" id="linkTab" name="BGTabs" >
+                        <label for="linkTab">Link</label>
+                        <div class="tabContent BG_link" id="linkForBg">
+                            <div class="tab_inner" style="display: flex; justify-content: center; margin-top: 15px;">
+                                <input  class="BG_link_input" onfocus="this.value=''" style=" width: 300px; height: 30px; padding-left: 5px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;" type="text" placeholder="Choose file...">
+                                <button class="BG_link_btn" style=" background-color: gray; color: white; font-size: 14px; height: 30px; width: 100px; border-top-right-radius: 5px; border-bottom-right-radius: 5px;">Browse</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="header_main_sign-in container">
+                <button class="signIn">
+                    <img src="./assets/img/shield-keyhole-svgrepo-com.svg" alt="">
+                </button>
+                <div class="validateFormContainer">
+                    <img class='closeForm' style=" width: 20px; height: 20px; margin: 10px 10px 0px 370px; cursor: pointer; " src="./assets/img/dismiss-svgrepo-com.svg" alt="">
+                    <h1 style="margin: 0px 30px 20px 30px; letter-spacing: 1px; ">Sign in</h1>
+                    <form action="" id="form">
+                        <div class="inputFildHolder">
+                            <input required type="email" onfocus="this.value=''" name="email" placeholder="Login / Email address" class="inputFild" id="login">
+                        </div>
+                        <div class="inputFildHolder">
+                            <input required type="password" onfocus="this.value=''" name="password" placeholder="Password" class="inputFild" id="pass">
+                            <img class="showPass" src="./assets/img/eye-tracking-svgrepo-com.svg" alt="">
+                            <div class="error_message">
+                                <p>Please provide a valid input</p>
+                            </div>
+                        </div>
+                        <button class="actionBtn" disabled> Sign In </button> 
+                    </form>
+                </div>
+
+            </div>
+        </div>
+        <div class="header_secondary_btn">
+            <div class="header_secondary_elements container">
+                <button class="save">
+                    <img src="./assets/img/thumb-like-svgrepo-com.svg" alt="">
+                </button>
+                <button class="table">
+                    <img src="./assets/img/text-column-three-svgrepo-com.svg" alt="">
+                </button>
+                <button class="orderList">
+                    <img src="./assets/img/text-number-list-ltr-svgrepo-com.svg" alt="">
+                </button>
+                <button class="unorderedList">
+                    <img src="./assets/img/text-bullet-list-svgrepo-com.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </header>
+    <section class="text">
+        <div class="user_text_input">
+            <textarea class="text_input" name="textContent">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, corrupti.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, corrupti.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, corrupti.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, corrupti.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A, corrupti.</p>
+            </textarea>
+        </div>
+        <div class="user_text">
+            
+        </div>
+    </section>
+</div>
+    <script type="module" src="./assets/scripts/script.js"></script>
+</body>
+</html>
